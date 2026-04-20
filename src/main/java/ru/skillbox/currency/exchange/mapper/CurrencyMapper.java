@@ -17,9 +17,9 @@ public interface CurrencyMapper {
 
     default CurrencyListDto covertToListDto(List<Currency> currencyList) {
         CurrencyListDto response = new CurrencyListDto();
-        response.setCurrencies(currencyListToCurrencyDtoList(currencyList));
+        response.setCurrencies(currencyListToCurrencyShotDtoList(currencyList));
         return response;
     }
 
-    List<CurrencyShotDto> currencyListToCurrencyDtoList(List<Currency> currencyList);
+    List<CurrencyShotDto> currencyListToCurrencyShotDtoList(List<Currency> currencyList);
 }
