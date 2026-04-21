@@ -5,6 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.skillbox.currency.exchange.dto.CurrencyDto;
 import ru.skillbox.currency.exchange.dto.CurrencyListDto;
+import ru.skillbox.currency.exchange.pojo.ValCurs;
+import ru.skillbox.currency.exchange.service.AutoUpdateCurrencyService;
 import ru.skillbox.currency.exchange.service.CurrencyService;
 
 @RestController
@@ -12,6 +14,7 @@ import ru.skillbox.currency.exchange.service.CurrencyService;
 @RequestMapping("api/currency")
 public class CurrencyController {
     private final CurrencyService service;
+    //private final AutoUpdateCurrencyService autoUpdateCurrencyService;
 
     @GetMapping
     ResponseEntity<CurrencyListDto> getAllCurrency() {
@@ -33,4 +36,10 @@ public class CurrencyController {
     ResponseEntity<CurrencyDto> create(@RequestBody CurrencyDto dto) {
         return ResponseEntity.ok(service.create(dto));
     }
+
+//    @GetMapping("/test")
+//    public ResponseEntity<ValCurs> getTestData(){
+//        return ResponseEntity.ok(autoUpdateCurrencyService.getFreshDataCurrencies());
+//    }
+
 }

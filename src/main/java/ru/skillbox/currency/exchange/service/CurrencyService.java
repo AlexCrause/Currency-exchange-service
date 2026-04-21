@@ -38,6 +38,6 @@ public class CurrencyService {
 
     public CurrencyDto create(CurrencyDto dto) {
         log.info("CurrencyService method create executed");
-        return  mapper.convertToDto(repository.save(mapper.convertToEntity(dto)));
+        return mapper.convertToDto(repository.save(mapper.convertToEntity(dto)));
     }
 }

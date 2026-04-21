@@ -21,3 +21,11 @@ spring:
         hbm2ddl:
           auto: none
 
+cb-rf:
+  api:
+    url: "https://cbr.ru/scripts/XML_daily.asp"
+            # https://www.cbr-xml-daily.ru/daily_utf8.xml
+    update:
+      currency:
+        cron: "0 0 */1 * * *"
+        #cron: "0 */5 * * * *"
