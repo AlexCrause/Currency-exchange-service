@@ -23,15 +23,15 @@ import java.util.List;
 public class AutoUpdateCurrencyService {
 
     private final CurrencyRepository currencyRepository;
+    private final JAXBContext context;
 
     @Value("${cb-rf.api.url}")
     private String cbRfApiUrl;
 
 
     @Scheduled(cron = "${cb-rf.api.update.currency.cron}")
-    private void getFreshDataCurrencies(){
+    public void getFreshDataCurrencies(){
         try {
-            JAXBContext context = JAXBContext.newInstance(ValCurs.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
             URL url = new URL(cbRfApiUrl);
             ValCurs valCurs = (ValCurs) unmarshaller.unmarshal(url);

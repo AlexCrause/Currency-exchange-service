@@ -28,4 +28,4 @@ cb-rf:
     update:
       currency:
         cron: "0 0 */1 * * *"
-        #cron: "0 */5 * * * *"
+        #cron: "0 */1 * * * *"
